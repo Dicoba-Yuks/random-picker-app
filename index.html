@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Random Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Random Picker</h2>
+    <div class="section">
+      <label>Manual Input Option (Separate with commas):</label>
+      <textarea id="manualInput" placeholder="e.g. John, Doe, Alice or A, B, C or 1, 2, 3"></textarea>
+    </div>
+
+    <div class="section">
+      <label>Automatic Input Options:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="vowels"> 5 Vowels (A, E, I, O, U)</label>
+        <label><input type="checkbox" id="consonants"> 21 Consonants</label>
+        <label><input type="checkbox" id="uppercase"> 26 Uppercase Letters</label>
+        <label><input type="checkbox" id="lowercase"> 26 Lowercase Letters</label>
+        <label><input type="checkbox" id="numbers"> Numbers (0-9)</label>
+      </div>
+    </div>
+
+    <button id="pickBtn">Pick Random!</button>
+
+    <div class="result-box">
+      <p>The Result is:</p>
+      <h1 id="resultDisplay">-</h1>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
