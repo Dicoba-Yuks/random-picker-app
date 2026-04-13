@@ -1,11 +1,12 @@
 document.getElementById('pickBtn').addEventListener('click', function() {
   let pool = [];
-
-  // 1. Ambil input manual
-  const manualValue = document.getElementById('manualInput').value;
+  const manualInput = document.getElementById('manualInput');
+  const manualValue = manualInput.value;
+  
+  // Ambil daftar item manual untuk pengecekan nanti
+  let manualItems = [];
   if (manualValue.trim() !== "") {
-    // Pisahkan berdasarkan koma dan hapus spasi kosong
-    const manualItems = manualValue.split(',').map(item => item.trim()).filter(item => item !== "");
+    manualItems = manualValue.split(',').map(item => item.trim()).filter(item => item !== "");
     pool = pool.concat(manualItems);
   }
 
@@ -44,6 +45,21 @@ document.getElementById('pickBtn').addEventListener('click', function() {
       clearInterval(interval);
       const finalResult = pool[Math.floor(Math.random() * pool.length)];
       resultDisplay.innerText = finalResult;
+
+      // FITUR BARU: Hapus dari manual input jika checkbox dicentang
+      const shouldRemove = document.getElementById('removeSelected').checked;
+      
+      if (shouldRemove) {
+        // Cek apakah item yang terpilih ada di dalam daftar manualItems
+        const indexInManual = manualItems.indexOf(finalResult);
+        
+        if (indexInManual !== -1) {
+          // Hapus item dari array manualItems
+          manualItems.splice(indexInManual, 1);
+          // Update kembali isi textarea dengan sisa item dipisahkan koma
+          manualInput.value = manualItems.join(', ');
+        }
+      }
     }
   }, 50);
 });
