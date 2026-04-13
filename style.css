@@ -40,7 +40,6 @@ textarea {
   box-sizing: border-box;
 }
 
-/* Style untuk checkbox hapus otomatis */
 .remove-option {
   padding: 15px;
   border-radius: 8px;
@@ -53,7 +52,6 @@ textarea {
   margin-bottom: 5px;
 }
 
-/* Style untuk garis putus-putus */
 .divider {
   border: none;
   border-top: 2px dashed #bdc3c7;
