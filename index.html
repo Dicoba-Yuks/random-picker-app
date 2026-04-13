@@ -10,10 +10,16 @@
 <body>
   <div class="container">
     <h2>Random Picker</h2>
+    
     <div class="section">
       <label>Manual Input Option (Separate with commas):</label>
       <textarea id="manualInput" placeholder="e.g. John, Doe, Alice or A, B, C or 1, 2, 3"></textarea>
+      <div class="remove-option">
+        <label><input type="checkbox" id="removeSelected"> Remove result from manual input if picked</label>
+      </div>
     </div>
+
+    <hr class="divider">
 
     <div class="section">
       <label>Automatic Input Options:</label>
@@ -26,7 +32,11 @@
       </div>
     </div>
 
+    <hr class="divider">
+
     <button id="pickBtn">Pick Random!</button>
+
+    <hr class="divider">
 
     <div class="result-box">
       <p>The Result is:</p>
